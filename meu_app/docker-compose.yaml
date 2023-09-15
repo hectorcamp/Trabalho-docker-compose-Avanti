@@ -1,0 +1,15 @@
+version: '3.2'
+
+services:
+  apache:
+    image: httpd:latest
+    ports:
+      - 80:80
+    volumes:
+      - ./meu-site:/usr/local/apache2/htdocs/
+    networks:
+      - mynet
+
+networks:
+  mynet:
+    driver: bridge
